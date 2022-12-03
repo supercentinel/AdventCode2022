@@ -29,23 +29,23 @@ int main(int argc, char const *argv[])
     {
         //j = 0;
         fgets(buffer, 255, pf);
-        if((strcmp(buffer, "\n")) == 0) break;;
+        if((strcmp(buffer, "\n")) == 0) break;
         bSize = strlen(buffer);
         //if(bSize % 2 == 0) strcat(buffer, "\n");
-        printf("%s", buffer);
+        //printf("%s", buffer);
         
-        printf("size: %d\n", bSize);
-        printf("First compartment\n");
+        //printf("size: %d\n", bSize);
+        //printf("First compartment\n");
         for (i = 0; i < bSize/2; i++)
         {
-            printf("%c"/*%d"*/, buffer[i]/*, Eval(buffer[i])*/);
+            //printf("%c"/*%d"*/, buffer[i]/*, Eval(buffer[i])*/);
             bffO[Eval(buffer[i])] = 1;
         }
-        printf("\n");
-        printf("Second compartment\n");
+        //printf("\n");
+        //printf("Second compartment\n");
         for (i = bSize/2; i < bSize ; i++)
         {
-            printf("%c"/*%d"*/, buffer[i]/*, Eval(buffer[i])*/);
+            //printf("%c"/*%d"*/, buffer[i]/*, Eval(buffer[i])*/);
             if(bffT[i] != '\n') bffT[Eval(buffer[i])] = 1;
         }
 
@@ -58,7 +58,7 @@ int main(int argc, char const *argv[])
         }
         Psum += (long int)j;
         
-        printf("\nCommon value %d\n\n", j);
+        //printf("\nCommon value %d\n\n", j);
         memset(bffO, 0, sizeof(bffO));
         memset(bffT, 0, sizeof(bffT));
 
